@@ -5,6 +5,7 @@
     android:id="@+id/register_corlay"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBackground"
     tools:context=".ui.activities.RegisterActivity">
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
