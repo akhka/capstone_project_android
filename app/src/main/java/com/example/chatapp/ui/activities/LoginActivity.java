@@ -52,7 +52,7 @@ import butterknife.ButterKnife;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private FirebaseUser currentUser;
+    //private FirebaseUser currentUser;
     private FirebaseAuth mAuth;
     private Handler loginHandler;
     private RequestQueue queue;
@@ -83,21 +83,21 @@ public class LoginActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         mAuth = FirebaseAuth.getInstance();
-        currentUser = mAuth.getCurrentUser();
+        //currentUser = mAuth.getCurrentUser();
         loginHandler = new Handler();
         queue = Volley.newRequestQueue(getApplicationContext());
 
         initializeOnClicks();
     }
 
-    @Override
+    /*@Override
     protected void onStart() {
         super.onStart();
 
         if (currentUser != null){
             sendUserToHomeActivity();
         }
-    }
+    }*/
 
 
     private void initializeOnClicks(){
@@ -121,6 +121,7 @@ public class LoginActivity extends AppCompatActivity {
     private void sendUserToHomeActivity() {
 
         Intent homeIntent = new Intent(this, HomeActivity.class);
+        homeIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(homeIntent);
         finish();
 

@@ -22,6 +22,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -41,6 +43,8 @@ public class RegisterActivity extends AppCompatActivity {
     @BindView(R.id.register_progressBar)
     ProgressBar progressBar;
 
+    private DatabaseReference dbReferance;
+
     private Handler registerHandler;
 
     private FirebaseAuth mAuth;
@@ -53,9 +57,19 @@ public class RegisterActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         registerHandler = new Handler();
         mAuth = FirebaseAuth.getInstance();
+        dbReferance = FirebaseDatabase.getInstance().getReference();
 
         onClicksInitilize();
 
+
+    }
+
+    private void sendUserToHomeActivity() {
+
+        Intent homeIntent = new Intent(this, HomeActivity.class);
+        homeIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(homeIntent);
+        finish();
 
     }
 
@@ -117,7 +131,9 @@ public class RegisterActivity extends AppCompatActivity {
                                 registerHandler.postDelayed(new Runnable() {
                                     @Override
                                     public void run() {
-                                        sendUserToLoginActivity();
+                                        String currentUserID = mAuth.getCurrentUser().getUid();
+                                        dbReferance.child("Users").child(currentUserID).setValue("");
+                                        sendUserToHomeActivity();
                                     }
                                 }, 2000);
                             }
