@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.activities.SettingsActivity"></activity>
+        <activity android:name=".ui.activities.GroupChatActivity"></activity>
+        <activity android:name=".ui.activities.SettingsActivity" />
         <activity android:name=".ui.activities.RegisterActivity" />
         <activity android:name=".ui.activities.LoginActivity" />
         <activity android:name=".ui.activities.HomeActivity">
