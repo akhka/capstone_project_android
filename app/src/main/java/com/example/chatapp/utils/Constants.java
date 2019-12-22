@@ -8,4 +8,14 @@ public class Constants {
 
     public static final String RECAPTCHA_VALIDATION_URL = "https://www.google.com/recaptcha/api/siteverify";
 
+    public static final String GROUP_NAME = "groupName";
+    public static final String MESSAGE = "message";
+    public static final String USERNAME = "username";
+    public static final String DATE = "date";
+    public static final String TIME = "time";
+    public static final String DATE_MMM_DD_YYYY = "MMM dd, yyyy";
+    public static final String TIME_HH_MM = "hh:mm";
+
+
+
 }

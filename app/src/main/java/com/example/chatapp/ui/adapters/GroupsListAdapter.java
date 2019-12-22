@@ -1,6 +1,7 @@
 package com.example.chatapp.ui.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.chatapp.R;
+import com.example.chatapp.ui.activities.GroupChatActivity;
+import com.example.chatapp.utils.Constants;
 
 import java.util.List;
 
@@ -27,7 +30,17 @@ public class GroupsListAdapter extends RecyclerView.Adapter<GroupsListAdapter.Vi
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.group_list_element_layout, parent, false);
-        return new ViewHolder(view);
+        ViewHolder vh = new ViewHolder(view);
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String currentGroupName = groups.get(vh.getAdapterPosition());
+                Intent groupIntent = new Intent(context, GroupChatActivity.class);
+                groupIntent.putExtra(Constants.GROUP_NAME, currentGroupName);
+                context.startActivity(groupIntent);
+            }
+        });
+        return vh;
     }
 
     @Override
