@@ -14,7 +14,7 @@
             android:id="@+id/group_chat_bar_layout"
             layout="@layout/appbar_layout"/>
 
-        <ScrollView
+        <androidx.core.widget.NestedScrollView
             android:id="@+id/group_chat_sv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -42,7 +42,7 @@
             </LinearLayout>
 
 
-        </ScrollView>
+        </androidx.core.widget.NestedScrollView>
 
         <LinearLayout
             android:id="@+id/group_chat_input_layout"

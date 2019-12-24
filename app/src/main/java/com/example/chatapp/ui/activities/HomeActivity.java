@@ -124,6 +124,12 @@ public class HomeActivity extends AppCompatActivity {
         finish();
     }
 
+    private void sendUserToFindFriendActivity() {
+
+        Intent ffIntent = new Intent(this, FindFriendActivity.class);
+        startActivity(ffIntent);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
@@ -137,7 +143,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onOptionsItemSelected(item);
 
         if (item.getItemId() == R.id.home_find_people_option){
-
+            sendUserToFindFriendActivity();
         }
 
         if (item.getItemId() == R.id.home_create_group_option){

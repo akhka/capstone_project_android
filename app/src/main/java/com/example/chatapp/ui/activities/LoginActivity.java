@@ -60,8 +60,6 @@ public class LoginActivity extends AppCompatActivity {
 
     @BindView(R.id.login_button)
     Button loginButton;
-    @BindView(R.id.phone_login_button)
-    Button phoneLoginButton;
     @BindView(R.id.login_email)
     EditText emailLoginField;
     @BindView(R.id.login_password)
@@ -152,7 +150,6 @@ public class LoginActivity extends AppCompatActivity {
         else{
             progressBar.setVisibility(View.VISIBLE);
             loginButton.setOnClickListener(null);
-            phoneLoginButton.setOnClickListener(null);
 
             recaptchaCheck(email, password);
 
