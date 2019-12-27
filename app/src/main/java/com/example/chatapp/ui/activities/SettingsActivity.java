@@ -2,6 +2,7 @@ package com.example.chatapp.ui.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 
 import android.content.Intent;
@@ -31,6 +32,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class SettingsActivity extends AppCompatActivity {
 
+    @BindView(R.id.settings_toolbar)
+    Toolbar mToolbar;
     @BindView(R.id.profile_image)
     CircleImageView userProgileImage;
     @BindView(R.id.profile_name_editText)
@@ -46,6 +49,7 @@ public class SettingsActivity extends AppCompatActivity {
     private String currentUserID;
     private DatabaseReference appReferance;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +60,11 @@ public class SettingsActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         currentUserID = mAuth.getCurrentUser().getUid();
         appReferance = FirebaseDatabase.getInstance().getReference();
+
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setTitle("Settings");
 
         initializeOnClicks();
 

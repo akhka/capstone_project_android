@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activities.ChatActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackground">
+
+        <include
+            layout="@layout/appbar_layout"
+            android:id="@+id/chat_toolbar"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/private_messages_list_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/chat_toolbar"
+            android:layout_above="@id/chat_input_layout"/>
+
+        <LinearLayout
+            android:id="@+id/chat_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true">
+
+            <EditText
+                android:id="@+id/private_message_input"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:hint="Enter your message here..."
+                android:padding="16dp"/>
+
+            <Button
+                android:id="@+id/send_private_chat_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Send"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

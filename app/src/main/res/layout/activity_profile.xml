@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activities.ProfileActivity">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/selected_profile_pic"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:src="@drawable/profile_pic"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"/>
+
+    <TextView
+        android:id="@+id/selected_profile_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/selected_profile_pic"
+        android:padding="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:textAlignment="center"
+        android:text="Username"
+        android:textSize="26sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/selected_profile_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/selected_profile_name"
+        android:padding="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:textAlignment="center"
+        android:text="This is User Status"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/send_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/selected_profile_status"
+        android:padding="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/buttons"
+        android:text="Send Chat Request"
+        android:textColor="@color/colorMainTextWhite"
+        android:textAllCaps="false"
+        android:textSize="24sp"/>
+
+    <Button
+        android:id="@+id/decline_message_request"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/send_message"
+        android:padding="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/buttons"
+        android:text="Cancel Chat Request"
+        android:textColor="@color/colorMainTextWhite"
+        android:textAllCaps="false"
+        android:textSize="24sp"
+        android:visibility="invisible"/>
+
+</RelativeLayout>

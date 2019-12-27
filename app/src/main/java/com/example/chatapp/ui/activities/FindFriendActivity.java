@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 
 import com.example.chatapp.R;
 import com.example.chatapp.model.Contact;
+import com.example.chatapp.utils.Constants;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
@@ -62,6 +64,16 @@ public class FindFriendActivity extends AppCompatActivity {
                     protected void onBindViewHolder(@NonNull FindFriendViewHolder holder, int position, @NonNull Contact model) {
                         holder.username.setText(model.getName());
                         holder.status.setText(model.getStatus());
+
+                        holder.itemView.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                String selected_user_id = getRef(position).getKey();
+                                Intent profileIntent = new Intent(FindFriendActivity.this, ProfileActivity.class);
+                                profileIntent.putExtra(Constants.SELECTED_PROFILE, selected_user_id);
+                                startActivity(profileIntent);
+                            }
+                        });
                     }
 
                     @NonNull
