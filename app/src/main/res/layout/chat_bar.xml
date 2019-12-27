@@ -21,7 +21,7 @@
         android:layout_centerVertical="true"
         android:layout_marginStart="24dp"
         android:textAlignment="center"
-        android:text="User Name"
+        android:text="@string/user_name"
         android:textSize="22sp"
         android:textStyle="bold"
         android:textColor="@color/colorMainTextWhite"/>

@@ -12,26 +12,42 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ui.activities.ChatActivity"
-            android:parentActivityName=".ui.activities.HomeActivity"></activity>
-        <activity android:name=".ui.activities.ProfileActivity" />
+            android:parentActivityName=".ui.activities.HomeActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".ui.activities.ProfileActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activities.FindFriendActivity"
-            android:parentActivityName=".ui.activities.HomeActivity" />
+            android:parentActivityName=".ui.activities.HomeActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activities.GroupChatActivity"
-            android:parentActivityName=".ui.activities.HomeActivity" />
+            android:parentActivityName=".ui.activities.HomeActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activities.SettingsActivity"
-            android:parentActivityName=".ui.activities.HomeActivity" />
-        <activity android:name=".ui.activities.RegisterActivity" />
-        <activity android:name=".ui.activities.LoginActivity" />
-        <activity android:name=".ui.activities.HomeActivity">
+            android:parentActivityName=".ui.activities.HomeActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activities.RegisterActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activities.LoginActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activities.HomeActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <receiver android:name=".ui.widget.ContactWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/home_appwidget"/>
+        </receiver>
     </application>
 
 </manifest>

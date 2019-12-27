@@ -3,6 +3,7 @@ apply plugin: 'com.google.gms.google-services'
 
 android {
 
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -18,11 +19,23 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
+    signingConfigs {
+
+        release {
+            storeFile file("..\\.gradle\\chatapp.jks")
+            storePassword "chatapp"
+            keyAlias "chatapp_alias"
+            keyPassword "chatapp"
+        }
+    }
+
     buildTypes {
 
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
 
     }
@@ -46,10 +59,6 @@ dependencies {
     implementation 'com.jakewharton:butterknife:10.2.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
 
-    // Retrofit
-    implementation 'com.squareup.retrofit2:retrofit:2.7.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.7.0'
-
     // Volley
     implementation 'com.android.volley:volley:1.1.1'
 
@@ -57,4 +66,11 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.0.1'
 
     implementation 'com.google.android.material:material:1.0.0'
+
+    /*// Room
+    implementation 'androidx.room:room-runtime:2.2.3'
+    annotationProcessor 'androidx.room:room-compiler:2.2.3'
+
+    // LiveData and ViewModel
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'*/
 }

@@ -56,14 +56,16 @@
                 android:id="@+id/group_message_input"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:hint="Enter your message here..."
-                android:padding="16dp"/>
+                android:hint="@string/enter_your_message_here"
+                android:inputType="text"
+                android:padding="16dp"
+                android:importantForAutofill="no" />
 
             <Button
                 android:id="@+id/send_group_chat_button"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Send"
+                android:text="@string/send"
                 android:gravity="center"/>
 
         </LinearLayout>

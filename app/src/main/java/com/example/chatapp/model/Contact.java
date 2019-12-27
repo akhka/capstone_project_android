@@ -1,5 +1,6 @@
 package com.example.chatapp.model;
 
+
 public class Contact {
 
     private String name, status;

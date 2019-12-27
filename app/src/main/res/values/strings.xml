@@ -1,7 +1,29 @@
 <resources>
-    <string name="app_name">Chat App</string>
+    <string name="app_name">Chat App (Capstone Project)</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="display_chats">Display Chats</string>
+    <string name="enter_your_message_here">Enter your message here...</string>
+    <string name="send">Send</string>
+    <string name="don_t_have_an_account">Don\'t Have an Account?</string>
+    <string name="email">Email...</string>
+    <string name="password">Password...</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="login">Login</string>
+    <string name="username">Username</string>
+    <string name="this_is_user_status">This is User Status</string>
+    <string name="send_chat_request">Send Chat Request</string>
+    <string name="cancel_chat_request">Cancel Chat Request</string>
+    <string name="create_account">Create Account</string>
+    <string name="already_registered">Already Registered?</string>
+    <string name="your_name_here">Your name here...</string>
+    <string name="your_status_here">Your status here...</string>
+    <string name="update">Update</string>
+    <string name="user_name">User Name</string>
+    <string name="find_people">Find People</string>
+    <string name="create_a_group">Create a Group</string>
+    <string name="settings">Settings</string>
+    <string name="logout">Logout</string>
 
 </resources>

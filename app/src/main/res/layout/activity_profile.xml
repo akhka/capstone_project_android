@@ -25,7 +25,6 @@
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:textAlignment="center"
-        android:text="Username"
         android:textSize="26sp"
         android:textStyle="bold"/>
 
@@ -39,7 +38,6 @@
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:textAlignment="center"
-        android:text="This is User Status"
         android:textSize="24sp" />
 
     <Button
@@ -52,7 +50,7 @@
         android:layout_marginEnd="24dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/buttons"
-        android:text="Send Chat Request"
+        android:text="@string/send_chat_request"
         android:textColor="@color/colorMainTextWhite"
         android:textAllCaps="false"
         android:textSize="24sp"/>
@@ -67,7 +65,7 @@
         android:layout_marginEnd="24dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/buttons"
-        android:text="Cancel Chat Request"
+        android:text="@string/cancel_chat_request"
         android:textColor="@color/colorMainTextWhite"
         android:textAllCaps="false"
         android:textSize="24sp"

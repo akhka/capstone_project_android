@@ -3,22 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:title="Find People"
+        android:title="@string/find_people"
         android:id="@+id/home_find_people_option"
         app:showAsAction="never"/>
 
     <item
-        android:title="Create a Group"
+        android:title="@string/create_a_group"
         android:id="@+id/home_create_group_option"
         app:showAsAction="never"/>
 
     <item
-        android:title="Settings"
+        android:title="@string/settings"
         android:id="@+id/home_settings_option"
         app:showAsAction="never"/>
 
     <item
-        android:title="Logout"
+        android:title="@string/logout"
         android:id="@+id/home_logout_option"
         app:showAsAction="never"/>
 
